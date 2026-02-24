@@ -1,0 +1,168 @@
+/* Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #0f172a;
+  background: #ffffff;
+}
+
+.site-header { border-bottom: 1px solid #e2e8f0; }
+.site-nav {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 14px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand { font-weight: 800; text-decoration: none; color: #0f172a; }
+.nav-note { color: #64748b; font-weight: 600; }
+
+.site-footer {
+  border-top: 1px solid #e2e8f0;
+  padding: 18px 0;
+  text-align: center;
+  color: #64748b;
+}
+
+/* Page */
+.page {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 40px 0 60px;
+}
+
+.section { margin-top: 44px; }
+.section-title {
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+
+/* Hero */
+.hero { text-align: center; padding: 10px 0 10px; }
+.hero h1 { font-size: clamp(32px, 4.2vw, 54px); font-weight: 900; letter-spacing: -0.02em; }
+.hero-text {
+  margin: 14px auto 18px;
+  max-width: 780px;
+  color: #475569;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Buttons */
+.btn {
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.btn-dark { background: #0b1220; color: #ffffff; }
+.btn-dark:hover { filter: brightness(0.95); }
+.btn-outline { background: #ffffff; border-color: #cbd5e1; color: #0f172a; }
+.btn-outline:hover { background: #f8fafc; }
+
+/* Plans grid */
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.plan-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+  position: relative;
+}
+
+.plan-card--recommended { border: 2px solid #2563eb; }
+.badge {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 2px 2px;
+  border-radius: 999px;
+}
+
+.plan-name { font-size: 22px; margin-bottom: 6px; }
+.plan-subtitle { color: #64748b; font-size: 13px; margin-bottom: 14px; line-height: 1.4; }
+
+.starting-at { color: #64748b; font-size: 12px; font-weight: 800; margin-top: 6px; }
+
+.plan-price { display: flex; align-items: baseline; gap: 4px; margin: 10px 0 14px; }
+.currency { font-size: 18px; }
+.amount { font-size: 54px; font-weight: 900; letter-spacing: -0.02em; }
+.unit { font-weight: 800; margin-left: 2px; }
+.per { color: #64748b; font-size: 13px; margin-left: 6px; }
+
+.feature-list { margin-top: 14px; padding-left: 18px; }
+.feature-list li { margin: 10px 0; color: #334155; line-height: 1.4; font-weight: 500;}
+
+.mini-title { margin-top: 16px; font-weight: 900; font-size: 12px; color: #2563eb; }
+.mini-list { margin-top: 8px; padding-left: 18px; }
+.mini-list li { margin: 8px 0; color: #334155; }
+
+
+.feature-list,
+.mini-list {
+  list-style: none;      
+  padding-left: 0;
+  margin: 0;
+}
+.feature-list li,
+.mini-list li {
+  position: relative;
+  padding-left: 20px;    
+}
+
+.feature-list li::before,
+.mini-list li::before {
+  content: ">";          
+  position: absolute;
+  left: 0;
+  color: #57606a;        
+  font-weight: bold;
+}
+
+.button-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+/* Add-ons grid */
+.addons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.addon-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+  min-height: 170px;
+}
+
+.addon-icon { width: 44px; height: 44px; display: block; margin-bottom: 12p;}
+
+.addon-card h3 { font-size: 18px; margin-bottom: 8px; }
+.addon-card p { color: #475569; line-height: 1.5; font-size: 14px; margin-bottom: 14px; }
+.more { color: #0f172a; text-decoration: none; font-weight: 800; }
+.more:hover { text-decoration: underline; }
+
