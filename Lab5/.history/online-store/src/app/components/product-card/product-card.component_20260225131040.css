@@ -1,0 +1,257 @@
+.card {
+  border: 1px solid #e6e6e6;
+  border-radius: 16px;
+  padding: 14px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+/* фиксируем блок картинки, чтобы ВСЕ были одинаковые */
+.imgWrap {
+  cursor: pointer;
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* одинаково “живые” */
+  display: block;
+}
+
+/* миниатюры делаем одинаковыми */
+.thumbs {
+  display: flex;
+  gap: 8px;
+}
+
+.thumb {
+  width: 56px;          /* фиксированная ширина */
+  height: 56px;         /* фиксированная высота */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 0;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;     /* обрезает лишнее */
+}
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+background: #f3f3f3;
+}
+
+/* фиксируем высоту названия и описания -> карточки станут одинаковые */
+.name {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 44px;      /* 2 строки */
+  line-height: 1.2;
+}
+
+.desc {
+  margin: 0;
+  color: #555;
+  font-size: 13px;
+  line-height: 1.35;
+  min-height: 54px;      /* 3-4 строки */
+}
+
+/* цена и рейтинг на одной линии */
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.price {
+  font-weight: 600;      /* было слишком жирно */
+  font-size: 18px;
+}
+
+.rating {
+  color: #f59e0b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ratingNum {
+  color: #666;
+  font-size: 13px;
+}
+
+/* кнопки всегда “внизу” */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover { opacity: 0.9; }
+.btn:active { transform: scale(0.98); }
+
+/* правильные цвета */
+.wa { background: #25D366; }
+.tg { background: #2AABEE; }
+
+.bottomActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.likeBtn {
+  background: #f3f4f6;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+
+.heart {
+  color: #9ca3af;
+  transition: 0.2s;
+}
+
+.likeBtn.active .heart {
+  color: #dc2626;
+}
+
+
+.likeBtn:hover {
+  background: #e5e7eb;
+}
+
+.likeBtn.animate .heart {
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+
+.deleteBtn {
+  background: #fef2f2;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.deleteBtn:hover {
+  background: #fecaca;
+  transform: scale(1.1);
+}
+
+/* Анимация лайка */
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* share */
+
+.shareBlock {
+  position: relative;
+  margin-top: 12px;
+}
+
+.shareBtn {
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.shareBtn:hover {
+  background: #4f46e5;
+}
+
+.shareMenu {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  animation: fadeIn 0.25s ease;
+}
+
+.btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  transition: 0.2s;
+}
+
+
+.btn.wa {
+  background: #25D366;
+}
+
+.btn.wa:hover {
+  background: #1da851;
+}
+
+.btn.tg {
+  background: #229ED9;
+}
+
+.btn.tg:hover {
+  background: #1b86ba;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

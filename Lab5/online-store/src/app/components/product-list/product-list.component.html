@@ -1,0 +1,13 @@
+<div class="page">
+  <h1>Online Store</h1>
+  <p class="sub">Каталог реальных товаров с Kaspi.kz</p>
+
+  <div class="grid">
+<app-product-card
+  *ngFor="let p of filteredProducts"
+  [product]="p"
+  (delete)="deleteProduct($event)">
+</app-product-card>
+  </div>
+</div>
+

@@ -1,0 +1,106 @@
+/* Общий контейнер */
+.container {
+  padding: 30px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  transition: 0.3s;
+}
+
+/* tabs */
+
+.tabs {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 40px;
+  animation: fadeDown 0.6s ease;
+}
+
+.tab {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  background: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.tab:hover {
+  transform: translateY(-2px);
+  background: #e0e7ff;
+}
+
+/* Активная вкладка */
+.tab.active {
+  background: linear-gradient(90deg, #6366f1, #4f46e5);
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(79,70,229,0.3);
+}
+
+/* Welcome page */
+
+.welcome {
+  text-align: center;
+  margin-top: 100px;
+  position: relative;
+  animation: fadeUp 0.8s ease;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #4f46e5, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Светящееся пятно */
+.glow {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(99,102,241,0.3), transparent);
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(60px);
+  animation: pulse 4s infinite ease-in-out;
+}
+
+/* animations */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}

@@ -1,0 +1,31 @@
+<div class="container">
+
+  <div class="tabs">
+    <button 
+      class="tab"
+      [class.active]="!selectedCategoryId"
+      (click)="goHome()">
+      Home
+    </button>
+
+    <button
+      class="tab"
+      *ngFor="let c of categories"
+      [class.active]="selectedCategoryId === c.id"
+      (click)="selectCategory(c.id)">
+      {{ c.name }}
+    </button>
+  </div>
+
+  <div *ngIf="!selectedCategoryId" class="welcome">
+    <h1 class="title">Welcome to Online Store</h1>
+    <p class="subtitle">Discover the best tech products in one place</p>
+    <div class="glow"></div>
+  </div>
+
+  <app-product-list
+    *ngIf="selectedCategoryId"
+    [categoryId]="selectedCategoryId">
+  </app-product-list>
+
+</div>

@@ -1,0 +1,24 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ProductCardComponent } from '../product-card/product-card.component';
+import { PRODUCTS } from '../../data/products';
+import { Input } from '@angular/core';
+
+@Input() categoryId!: number;
+
+get filteredProducts() {
+  return this.products.filter(p => p.categoryId === this.categoryId);
+}
+
+@Component({
+  selector: 'app-product-list',
+  standalone: true,
+  imports: [CommonModule, ProductCardComponent],
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.css'],
+})
+export class ProductListComponent {
+  products = PRODUCTS;
+
+  
+}
