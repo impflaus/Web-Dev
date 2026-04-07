@@ -1,0 +1,39 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ProductItemComponent } from '../product-item/product-item.component';
+import { PRODUCTS } from '../../data/products';
+
+import { FormsModule } from '@angular/forms';
+
+
+
+@Component({
+  selector: 'app-product-list',
+  standalone: true,
+  imports: [CommonModule, ProductItemComponent, FormsModule],
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.css'],
+})
+export class ProductListComponent {
+  products = PRODUCTS;
+
+
+  minPrice = 0;
+  maxPrice = Math.max(...this.products.map(p => p.price));
+
+  selectedMinPrice = this.minPrice;
+  selectedMaxPrice = this.maxPrice;
+  
+  updateMin() {
+  if (this.selectedMinPrice > this.selectedMaxPrice) {
+    this.selectedMinPrice = this.selectedMaxPrice;
+  }
+}
+
+  updateMax() {
+  if (this.selectedMaxPrice < this.selectedMinPrice) {
+    this.selectedMaxPrice = this.selectedMinPrice;
+  }
+}
+
+}

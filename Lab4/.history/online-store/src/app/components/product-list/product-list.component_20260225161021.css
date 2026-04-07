@@ -1,0 +1,60 @@
+.page {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  margin-bottom: 6px;
+}
+
+.sub {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+
+.price-filter {
+  margin: 25px 0;
+  padding: 20px;
+  background: #f4f6ff;
+  border-radius: 16px;
+}
+
+.slider-wrapper {
+  position: relative;
+  height: 40px;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  pointer-events: none;
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+.slider::-webkit-slider-thumb {
+  pointer-events: all;
+  -webkit-appearance: none;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: #4f6cff;
+  cursor: pointer;
+  border: none;
+}
+
+.slider::-webkit-slider-runnable-track {
+  height: 4px;
+  background: #d4dbff;
+  border-radius: 4px;
+}
+

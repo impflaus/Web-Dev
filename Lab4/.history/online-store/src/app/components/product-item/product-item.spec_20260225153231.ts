@@ -1,0 +1,23 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { ProductItem } from './product-item.component';
+
+describe('ProductCard', () => {
+  let component: ProductItem;
+  let fixture: ComponentFixture<ProductItem>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [ProductCard]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(ProductCard);
+    component = fixture.componentInstance;
+    await fixture.whenStable();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

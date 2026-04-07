@@ -1,0 +1,38 @@
+<div class="page">
+  <h1>Online Store</h1>
+  <p class="sub">Каталог реальных товаров с Kaspi.kz</p>
+  
+  <div class="price-filter">
+
+  <label>
+    Price:
+    {{ selectedMinPrice | number }} ₸ —
+    {{ selectedMaxPrice | number }} ₸
+  </label>
+
+  <div class="slider-wrapper">
+    <input
+      type="range"
+      [min]="minPrice"
+      [max]="maxPrice"
+      step="10000"
+      [(ngModel)]="selectedMinPrice"
+      (input)="updateMin()"
+      class="slider min-slider">
+
+    <input
+      type="range"
+      [min]="minPrice"
+      [max]="maxPrice"
+      step="10000"
+      [(ngModel)]="selectedMaxPrice"
+      (input)="updateMax()"
+      class="slider max-slider">
+  </div>
+
+</div>
+
+  <div class="grid">
+    <app-product-item *ngFor="let p of products" [product]="p"></app-product-item>
+  </div>
+</div>
